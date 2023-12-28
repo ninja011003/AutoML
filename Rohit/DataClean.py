@@ -85,7 +85,7 @@ class PreProcessor:
                     print('Imputation failed for feature "{}"',  feature)
         return df
     
-    def normalization(df):
+    def normalization(self,df):
         
         # Dependent column needs to be removed before normalization
         
