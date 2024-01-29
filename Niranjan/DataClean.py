@@ -153,9 +153,12 @@ class PreProcessor:
                      print('LOGREG imputation failed for feature "{}"', feature)
                  for feature in df.columns: 
                      try:
-                         # map categorical feature values back to original
-                         mappings_inv = {v: k for k, v in mapping[feature].items()}
-                         df[feature] = df[feature].map(mappings_inv)
+                        mapping = dict()
+                        mappings = {k: i for i, k in enumerate(df[feature].unique(), 0)}
+                        mapping[feature] = mappings
+                        df[feature] = df[feature].map(mapping[feature])
+                        mappings_inv = {v: k for k, v in mapping[feature].items()}
+                        df[feature] = df[feature].map(mappings_inv)
                      except:
                          pass     
              return df
