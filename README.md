@@ -26,3 +26,6 @@ But if the need arises to run it offline, then here is the procedure
    streamlit run streamlit_app.py
    ```
 5) A new browser window will open to run the project in local.
+> [!TIP]
+> The sample dataset is provided in the data folder [apple_quality.csv](alphabyte/data/). Feel free to use it for demonstration purpose! Target is Quality
+
